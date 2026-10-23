@@ -1,0 +1,22 @@
+# Credentials and secrets
+.env
+.env.*
+*.pem
+*.key
+*.secret
+
+# Cloud and infrastructure state
+.aws/
+.kube/
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Operating system files
+.DS_Store
+Thumbs.db
