@@ -53,20 +53,24 @@ and date. It does not modify system configuration or delete files.
 
 ## Workflow Diagram
 
-This diagram shows how the Bash system-report script gathers and displays Linux information.
+This diagram shows the actual steps performed by `scripts/test.sh`.
 
 ```mermaid
 flowchart TD
-    Start[Run system_report script]
-    Collect[Run Linux information commands]
-    User[Read username and hostname]
-    System[Collect uptime, disk, and memory details]
-    Report[Display system report in terminal]
-    Start --> Collect
-    Collect --> User
-    Collect --> System
-    User --> Report
-    System --> Report
+    Start[Run scripts/test.sh]
+    User[Read current username with whoami]
+    Host[Read hostname with hostname]
+    Directory[Read working directory with pwd]
+    Date[Read current date and time with date]
+    Display[Print results in terminal]
+    Done[Print completion message]
+
+    Start --> User
+    User --> Host
+    Host --> Directory
+    Directory --> Date
+    Date --> Display
+    Display --> Done
 ```
 
 ## Screenshot Evidence
